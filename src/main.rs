@@ -1,5 +1,5 @@
-mod lifetimes;
+mod vectors;
 
 fn main() {
-    lifetimes::run();
+    vectors::run();
 }

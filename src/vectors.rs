@@ -1,11 +1,25 @@
 // Arrays - Fixed list where elements are the same data types
 use std::mem;
 
+fn test(vector: Vec<i32>) {
+    println!("{:?}", vector);
+}
+
 pub fn run() {
-    let mut numbers: Vec<i32> = vec![1, 2, 3, 4, 5];
+    let numbers: Vec<i32> = vec![1, 2, 3, 4, 5];
 
-    println!("{:?}", numbers);
+    // test(numbers);
 
+    // let c = move || println!("{numbers:?}"); // move numbers into closure
+    // c();
+
+    // borrow numbers
+    let c = |numbers| println!("{:?}", numbers);
+    c(numbers);
+
+    // test(numbers);
+
+    let mut numbers = vec![1, 2, 3, 4, 5];
     // Re-assign value
     numbers[2] = 20;
 
