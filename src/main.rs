@@ -1,5 +1,5 @@
-mod structs;
+mod lifetimes;
 
 fn main() {
-    structs::run();
+    lifetimes::run();
 }
