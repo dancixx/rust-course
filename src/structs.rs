@@ -10,6 +10,7 @@ struct Color {
 // Tuple Struct
 struct Color2(u8, u8, u8);
 
+#[derive(std::fmt::Debug)]
 struct Person {
     first_name: String,
     last_name: String,
@@ -38,24 +39,40 @@ impl Person {
     fn to_tuple(self) -> (String, String) {
         (self.first_name, self.last_name)
     }
+
+    fn print_self(self) {
+        println!("self {:?}", self)
+    }
+
+    fn print_self1(&self) {
+        println!("self {:?}", self);
+    }
+
+    fn print_self2(&self) {
+        println!("self {:?}", &self);
+    }
+
+    fn print_self3(self) {
+        println!("self {:?}", &self);
+    }
 }
 
 pub fn run() {
-    let mut c = Color {
-        red: 255,
-        green: 0,
-        blue: 0,
-    };
+    // let mut c = Color {
+    //     red: 255,
+    //     green: 0,
+    //     blue: 0,
+    // };
 
-    c.red = 200;
+    // c.red = 200;
 
-    println!("Color: {} {} {}", c.red, c.green, c.blue);
+    // println!("Color: {} {} {}", c.red, c.green, c.blue);
 
-    let mut c2 = Color2(255, 0, 0);
+    // let mut c2 = Color2(255, 0, 0);
 
-    c2.0 = 200;
+    // c2.0 = 200;
 
-    println!("Color: {} {} {}", c2.0, c2.1, c2.2);
+    // println!("Color: {} {} {}", c2.0, c2.1, c2.2);
 
     let mut p = Person::new("John", "Doe");
     println!("Person {} {}", p.first_name, p.last_name);
@@ -63,4 +80,9 @@ pub fn run() {
     p.set_last_name("Williams");
     println!("Person {}", p.full_name());
     println!("Person Tuple {:?}", p.to_tuple());
+
+    //println!("{:?}", p.print_self());
+    //println!("{:?}", p.print_self1());
+    //println!("{:?}", p.print_self2());
+    //println!("{:?}", p.print_self3())
 }
