@@ -4,7 +4,7 @@ pub fn run() {
         let x = 5;
         r = &x; // r not live long enough
     }
-    println!("r: {}", r);
+    // println!("r: {}", r);
 
     let string1 = String::from("abcd");
     let string2 = String::from("xyz");
@@ -60,6 +60,8 @@ pub fn run2() {
     let i = ImportantExcerpt {
         part: first_sentence,
     };
+    longest(first_sentence, &novel);
+    print!("i.part: {}", i.part);
 }
 
 // Lifetime elision
