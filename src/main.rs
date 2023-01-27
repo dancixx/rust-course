@@ -1,4 +1,5 @@
 // mod box_smart_pointers;
+mod exercises;
 mod interior_mutability;
 // mod lifetimes;
 // mod move_closure;
@@ -11,8 +12,5 @@ mod interior_mutability;
 // mod vectors;
 
 fn main() {
-    // interior_mutability::cell();
-    // interior_mutability::refcell();
-    // interior_mutability::rw_lock();
-    interior_mutability::mutex();
+    exercises::fromstr_trait_impl::run()
 }
