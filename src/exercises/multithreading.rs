@@ -44,7 +44,7 @@ pub fn run_sync() {
 pub fn run_local_storage() {
     let counter = Arc::new(Mutex::new(0));
     let mut handles = vec![];
-    let count = 10_000_000_000i64;
+    let count = 1_000_000_000usize;
 
     let start = std::time::Instant::now();
     for _ in 0..10 {
@@ -101,7 +101,7 @@ thread_local! {
 
 pub fn run_tls_atomic() {
     let mut handles = vec![];
-    let count = 10_000_000_000i64;
+    let count = 1_000_000_000usize;
 
     let start = std::time::Instant::now();
     for _ in 0..10 {

@@ -10,11 +10,8 @@ mod interior_mutability;
 // mod refcell_sm;
 // mod structs;
 // mod vectors;
+mod dyn_trait;
 
 fn main() {
-    // exercises::multithreading::run_sync();
-    // exercises::multithreading::run_async_multithread();
-    exercises::multithreading::run_local_storage();
-    // exercises::multithreading::run_atomic();
-    exercises::multithreading::run_tls_atomic();
+    dyn_trait::run();
 }
